@@ -20,7 +20,7 @@
             <router-link to="/" class="px-6 border-b-2 border-blue-500 h-full flex items-center ">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fill-current w-5 h-5"><path d="M22.6 11l-9.9-9c-.4-.4-1.1-.4-1.5 0l-9.9 9c-.3.3-.5.8-.3 1.2.2.5.6.8 1.1.8h1.6v9c0 .4.3.6.6.6h5.4c.4 0 .6-.3.6-.6v-5.5h3.2V22c0 .4.3.6.6.6h5.4c.4 0 .6-.3.6-.6v-9h1.6c.5 0 .9-.3 1.1-.7.3-.5.2-1-.2-1.3zm-2.5-8h-4.3l5 4.5V3.6c0-.3-.3-.6-.7-.6z"/></svg>
             </router-link>
-            <router-link :to="'/users/' + user.data.user_id" class="px-6 border-b-2 border-white h-full flex items-center ">
+            <router-link :to="'/users/' + authUser.data.user_id" class="px-6 border-b-2 border-white h-full flex items-center ">
                 <img src="https://cdn.pixabay.com/photo/2014/07/09/10/04/man-388104_960_720.jpg" alt="profile image for user" class="w-8 h-8 object-cover rounded-full">
             </router-link>
             <router-link to="/" class="px-6 border-b-2 border-white h-full flex items-center ">
@@ -34,23 +34,15 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
+
     export default {
         name: "Nav",
 
-        data: () => {
-            return {
-                user: null,
-            }
-        },
-
-        mounted() {
-            axios.get('/api/auth-user')
-                .then(res => {
-                    this.user = res.data;
-                })
-                .catch(error => {
-                    console.log('Unable to fetch auth user');
-                });
+        computed: {
+            ...mapGetters({
+                authUser: 'authUser'
+            })
         }
     }
 </script>
