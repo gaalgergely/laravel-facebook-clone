@@ -2172,6 +2172,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -20466,27 +20467,29 @@ var render = function() {
               "absolute flex items-center bottom-0 right-0 mb-4 mr-12 z-20"
           },
           [
-            _c(
-              "button",
-              {
-                staticClass: "py-1 px-3 bg-gray-400 rounded",
-                on: {
-                  click: function($event) {
-                    return _vm.$store.dispatch(
-                      "sendFriendRequest",
-                      _vm.$route.params.userId
+            _vm.friendButtonText
+              ? _c(
+                  "button",
+                  {
+                    staticClass: "py-1 px-3 bg-gray-400 rounded",
+                    on: {
+                      click: function($event) {
+                        return _vm.$store.dispatch(
+                          "sendFriendRequest",
+                          _vm.$route.params.userId
+                        )
+                      }
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(_vm.friendButtonText) +
+                        "\n            "
                     )
-                  }
-                }
-              },
-              [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.friendButtonText) +
-                    "\n            "
+                  ]
                 )
-              ]
-            )
+              : _vm._e()
           ]
         )
       ]),
