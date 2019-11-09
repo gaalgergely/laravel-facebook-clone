@@ -14,10 +14,20 @@
             </div>
 
             <div class="absolute flex items-center bottom-0 right-0 mb-4 mr-12 z-20">
-                <button v-if="friendButtonText"
+                <button v-if="friendButtonText && friendButtonText !== 'Accept'"
                         class="py-1 px-3 bg-gray-400 rounded"
                         @click="$store.dispatch('sendFriendRequest', $route.params.userId)">
                     {{ friendButtonText }}
+                </button>
+                <button v-if="friendButtonText && friendButtonText === 'Accept'"
+                        class="mr-2 py-1 px-3 bg-blue-500 rounded"
+                        @click="$store.dispatch('acceptFriendRequest', $route.params.userId)">
+                    Accept
+                </button>
+                <button v-if="friendButtonText && friendButtonText === 'Accept'"
+                        class="py-1 px-3 bg-gray-400 rounded"
+                        @click="$store.dispatch('ignoreFriendRequest', $route.params.userId)">
+                    Ignore
                 </button>
             </div>
         </div>
