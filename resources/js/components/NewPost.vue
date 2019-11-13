@@ -25,6 +25,8 @@
 </template>
 
 <script>
+    import _ from 'lodash';
+
     export default {
         name: "NewPost",
 
@@ -33,9 +35,9 @@
                 get() {
                     return this.$store.getters.postMessage;
                 },
-                set(postMessage) {
+                set: _.debounce(function (postMessage) {
                     this.$store.commit('updateMessage', postMessage);
-                },
+                }, 300),
             }
         }
     }

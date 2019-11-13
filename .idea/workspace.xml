@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/NewPost.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/NewPost.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/modules/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/modules/posts.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +187,7 @@
       <updated>1570832688392</updated>
       <workItem from="1570832689485" duration="9643000" />
       <workItem from="1571694314664" duration="29352000" />
-      <workItem from="1573333712144" duration="4248000" />
+      <workItem from="1573333712144" duration="4617000" />
     </task>
     <servers />
   </component>
