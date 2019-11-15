@@ -10,7 +10,7 @@ class PostCommentController extends Controller
     public function store(Post $post)
     {
         $data = request()->validate([
-            'body' => '',
+            'body' => 'required',
         ]);
 
         $post->comments()->create(array_merge($data, [
