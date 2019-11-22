@@ -2048,6 +2048,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         acceptedFiles: 'image/*',
         clickable: '.dz-clickable',
         autoProcessQueue: false,
+        maxFiles: 1,
         previewsContainer: '.dropzone-previews',
         previewTemplate: document.querySelector('#dz-template').innerHTML,
         params: {
@@ -2064,6 +2065,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           _this.dropzone.removeAllFiles();
 
           _this.$store.commit('pushPost', res);
+        },
+        maxfilesexceeded: function maxfilesexceeded(file) {
+          _this.dropzone.removeAllFiles();
+
+          _this.dropzone.addFile(file);
         }
       };
     }
